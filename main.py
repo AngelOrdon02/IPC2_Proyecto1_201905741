@@ -7,10 +7,11 @@ Angel Geovanny Ordon Colchaj
 import os, subprocess, sys
 
 # Importando controladores
-# from controllers.floorController import FloorController
+from controllers.filereaderController import FilereaderController
 
 # Instancias
 # floors = FloorController()
+filereader_Controller = FilereaderController()
 
 # ---------- Limpiador de consola ----------
 
@@ -34,7 +35,7 @@ print("Christmas Puzzle")
 print("")
 
 def menu():
-    print("(1) Opcion 1")
+    print("(1) Carga de archivos")
     print("(2) Opcion 2")
     print("(3) Salir")
     entry = str(input("Ingrese una opcion: "))
@@ -47,6 +48,15 @@ while(cycle):
         print("")
         print("Opcion 1")
         print("")
+
+        # Codigo de lectura del archivo
+        filepath = filereader_Controller.file_reader()
+        
+        if filepath is None:
+            print("- Ningun archivo seleccionado \n")
+        else:
+            print("filepath: " + filepath)
+            pass
 
         input("")
     elif entry == "2":
