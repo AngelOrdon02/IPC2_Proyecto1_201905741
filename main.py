@@ -60,7 +60,7 @@ while(cycle):
         if filepath is None:
             print("- Ningun archivo seleccionado \n")
         else:
-            print("filepath: " + filepath)
+            # print("filepath: " + filepath)
             processor_controller.data_processor(filepath, users)
 
         input("")

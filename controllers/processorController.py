@@ -16,8 +16,9 @@ class ProcessorController:
 
             position_user += 1
 
-            personal_info = r.text.replace('\n', '')
-            puzzle = r.text.replace('\n', '')
+            # personal_info = r.text.replace('\n', '')
+            puzzle_data = r.text.replace('\n', '')
+            solution_data = r.text.replace('\n', '')
 
             # personal_info = r[0]
             name = r[0][0]
@@ -26,7 +27,22 @@ class ProcessorController:
             movements = r[1]
             size = r[2]
             figure = r[3]
-            puzzle = r[4]
+            puzzle_data = r[4]
+            solution_data = r[5]
+
+            # Puzzle desarrogrado
+            for cell in puzzle_data:
+                x = cell.get('f')
+                y = cell.get('c')
+                print("(" + x + ", " + y + ")")
+
+            print()
+
+            # Solucion del puzzle
+            for cell in solution_data:
+                x = cell.get('f')
+                y = cell.get('c')
+                print("(" + x + ", " + y + ")")
 
             # print(movements.text)
             # print(size.text)
