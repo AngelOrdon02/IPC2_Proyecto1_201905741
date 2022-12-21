@@ -8,10 +8,15 @@ import os, subprocess, sys
 
 # Importando controladores
 from controllers.filereaderController import FilereaderController
+from controllers.processorController import ProcessorController
+from controllers.simpleListController import SimpleListController
 
 # Instancias
-# floors = FloorController()
 filereader_Controller = FilereaderController()
+processor_controller = ProcessorController()
+
+# Instancia de arreglos
+users = SimpleListController()
 
 # ---------- Limpiador de consola ----------
 
@@ -56,7 +61,7 @@ while(cycle):
             print("- Ningun archivo seleccionado \n")
         else:
             print("filepath: " + filepath)
-            pass
+            processor_controller.data_processor(filepath, users)
 
         input("")
     elif entry == "2":
@@ -64,6 +69,8 @@ while(cycle):
         print("Opcion 2")
         print("")
 
+        print("---------- Usuarios ----------")
+        users.show_list()
         input("")
     elif entry == "3":
         print("")
