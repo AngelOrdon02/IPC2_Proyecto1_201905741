@@ -29,7 +29,7 @@ class GrapherController:
         file.write("            b0 -> b1;\n")
         file.write("            b1 -> b2;\n")
         file.write("            b2 -> b3;\n")
-        file.write("        label = \"process #2\";\n")
+        file.write("        label = \"Top #10\";\n")
         file.write("        color=\"blue\"\n")
         file.write("    }\n")
         # file.write("    ")

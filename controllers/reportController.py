@@ -56,7 +56,7 @@ class ReportController:
         f.write("                       <div class=\"twelve wide column\">\n")
         f.write("                           <div class=\"ui segment\">\n")
         f.write("                               <h3>Premios</h3>\n")
-        f.write(f"                              <img class=\"ui centered medium image\" src=\"./resources/img/{graph_gifts}.png\">\n")
+        f.write(f"                              <img class=\"ui centered medium image\" style=\"width:200px;height:550px;\" src=\"./resources/img/{graph_gifts}.png\">\n")
         f.write("                           </div>\n")
         f.write("                       </div>\n")
         f.write("                   <div class=\"two wide column\"></div>\n")

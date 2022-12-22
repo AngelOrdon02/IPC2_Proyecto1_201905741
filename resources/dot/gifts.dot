@@ -4,7 +4,7 @@ digraph G{
             b0 -> b1;
             b1 -> b2;
             b2 -> b3;
-        label = "process #2";
+        label = "Top #10";
         color="blue"
     }
 }
