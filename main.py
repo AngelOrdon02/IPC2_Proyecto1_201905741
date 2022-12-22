@@ -11,11 +11,13 @@ from controllers.filereaderController import FilereaderController
 from controllers.processorController import ProcessorController
 from controllers.simpleListController import SimpleListController
 from controllers.grapherController import GrapherController
+from controllers.reportController import ReportController
 
 # Instancias
 filereader_Controller = FilereaderController()
 processor_controller = ProcessorController()
 grapher_controller = GrapherController()
+report_controller = ReportController()
 
 # Instancia de arreglos
 users = SimpleListController()
@@ -94,7 +96,13 @@ while(cycle):
         print("---------- Premios ----------")
         gifts.show_gifts()
 
+        # Grafico
         graph_gifts = grapher_controller.gifts_grapher(gifts)
+
+        # Reporte
+        path = report_controller.report_make(gifts, graph_gifts)
+        os.system(path)
+        
         input("")
     elif entry == "4":
         print("")

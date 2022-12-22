@@ -3,7 +3,7 @@ import os
 class GrapherController:
 
     @staticmethod
-    def gifts_grapher(gifs):
+    def gifts_grapher(gifts):
         
         # row = floors.get_floor_row(id_floor)
         # column = floors.get_floor_column(id_floor)
