@@ -10,10 +10,12 @@ import os, subprocess, sys
 from controllers.filereaderController import FilereaderController
 from controllers.processorController import ProcessorController
 from controllers.simpleListController import SimpleListController
+from controllers.grapherController import GrapherController
 
 # Instancias
 filereader_Controller = FilereaderController()
 processor_controller = ProcessorController()
+grapher_controller = GrapherController()
 
 # Instancia de arreglos
 users = SimpleListController()
@@ -91,6 +93,8 @@ while(cycle):
 
         print("---------- Premios ----------")
         gifts.show_gifts()
+
+        graph_gifts = grapher_controller.gifts_grapher(gifts)
         input("")
     elif entry == "4":
         print("")

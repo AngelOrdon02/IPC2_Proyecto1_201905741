@@ -31,26 +31,24 @@ class ProcessorController:
             puzzle_data = r[4]
             solution_data = r[5]
 
-            # Puzzle desarrogrado
-            for cell in puzzle_data:
-                x = cell.get('f')
-                y = cell.get('c')
-                print("(" + x + ", " + y + ")")
+            if (int(size.text) <= 30):
+                # Puzzle desarrogrado
+                for cell in puzzle_data:
+                    x = cell.get('f')
+                    y = cell.get('c')
+                    print("(" + x + ", " + y + ")")
 
-            print()
+                print()
 
-            # Solucion del puzzle
-            for cell in solution_data:
-                x = cell.get('f')
-                y = cell.get('c')
-                print("(" + x + ", " + y + ")")
+                # Solucion del puzzle
+                for cell in solution_data:
+                    x = cell.get('f')
+                    y = cell.get('c')
+                    print("(" + x + ", " + y + ")")
 
-            # print(movements.text)
-            # print(size.text)
-            # print(figure.text)
-
-            users.insert_last(User(position_user, name.text, age.text, movements.text, size.text, figure.text, 1, 1))
-            # print(puzzle.text)
+                # Add lista
+                print("Es menor a 30")
+                users.insert_last(User(position_user, name.text, age.text, movements.text, size.text, figure.text, 1, 1))
     
     @staticmethod
     def data_processor_2(filepath, gifts):
