@@ -57,16 +57,26 @@ class SimpleListController():
             tmp = None
             tmp = self.head
     
-    # ====================== Empresa (Business) ==============================
+    # ====================== Premio (Gift) ==============================
     # Método para buscar empresa y retornar id
-    def get_id_business(self, code_business):
-        tmp = self.head
+    # def get_id_business(self, code_business):
+    #     tmp = self.head
 
-        for i in range(self.size):
-            if ((getattr(tmp.fact, 'code')) == str(code_business)):
-                id_business = getattr(tmp.fact, 'id')
-                return id_business
-            else:
-                tmp = tmp.next
-    
+    #     for i in range(self.size):
+    #         if ((getattr(tmp.fact, 'code')) == str(code_business)):
+    #             id_business = getattr(tmp.fact, 'id')
+    #             return id_business
+    #         else:
+    #             tmp = tmp.next
+
+    # Método para imprimir la lista de nodos
+    def show_gifts(self):
+        node = self.head
+        while node != None:
+            #print( getattr(node.fact, key)  ," => ")
+            print( "id: " + str(getattr(node.fact, 'id')))
+            print( "Lugar: " + str(getattr(node.fact, 'place')))
+            print( "Descripción: " + str(getattr(node.fact, 'description')))
+            node = node.next
+
     # ============================ FIN =======================================

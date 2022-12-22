@@ -17,6 +17,7 @@ processor_controller = ProcessorController()
 
 # Instancia de arreglos
 users = SimpleListController()
+gifts = SimpleListController()
 
 # ---------- Limpiador de consola ----------
 
@@ -40,9 +41,10 @@ print("Christmas Puzzle")
 print("")
 
 def menu():
-    print("(1) Carga de archivos")
-    print("(2) Opcion 2")
-    print("(3) Salir")
+    print("(1) Carga de configuración")
+    print("(2) Carga de premios")
+    print("(3) Opcion 3")
+    print("(4) Salir")
     entry = str(input("Ingrese una opcion: "))
     return entry
 
@@ -69,10 +71,28 @@ while(cycle):
         print("Opcion 2")
         print("")
 
-        print("---------- Usuarios ----------")
-        users.show_list()
+        # Codigo de lectura del archivo
+        filepath = filereader_Controller.file_reader()
+        
+        if filepath is None:
+            print("- Ningun archivo seleccionado \n")
+        else:
+            # print("filepath: " + filepath)
+            processor_controller.data_processor_2(filepath, gifts)
+
         input("")
     elif entry == "3":
+        print("")
+        print("Opcion 3")
+        print("")
+
+        print("---------- Usuarios ----------")
+        users.show_list()
+
+        print("---------- Premios ----------")
+        gifts.show_gifts()
+        input("")
+    elif entry == "4":
         print("")
         print("Gracias por utilizar el programa")
         print("")

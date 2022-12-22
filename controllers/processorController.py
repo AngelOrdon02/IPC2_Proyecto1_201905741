@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 # Modelos
 from models.user import User
+from models.gift import Gift
 
 class ProcessorController:
 
@@ -50,3 +51,21 @@ class ProcessorController:
 
             users.insert_last(User(position_user, name.text, age.text, movements.text, size.text, figure.text, 1, 1))
             # print(puzzle.text)
+    
+    @staticmethod
+    def data_processor_2(filepath, gifts):
+        tree = ET.parse(filepath)
+        root = tree.getroot()
+
+        position_gift = gifts.last_node()
+
+        for r in root:
+
+            position_gift += 1
+
+            place = r[0]
+            description = r[1]
+
+            # print(place.text)
+            # print(description.text)
+            gifts.insert_last(Gift(position_gift, place.text, description.text))
