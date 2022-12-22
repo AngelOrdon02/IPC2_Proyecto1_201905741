@@ -26,6 +26,11 @@ class GrapherController:
         file.write("    subgraph cluster_1 {\n")
         file.write("        node [style=\"filled\"];\n")
         # file.write("        b0 -> b1 -> b2 -> b3;\n")
+
+        # for element in gifts:
+        #     # file.write("")
+        #     print(element)
+
         file.write("            b0 -> b1;\n")
         file.write("            b1 -> b2;\n")
         file.write("            b2 -> b3;\n")
